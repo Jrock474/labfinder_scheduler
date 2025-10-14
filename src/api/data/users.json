@@ -1,14 +1,14 @@
 [
-    {
-      "id": "u1",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "passwordHash": "$2b$10$D9uE7hL5wF0IYik8Pg8C4usq4yz6iPpZrRLD1DLfTcb4c3E8lq4hy"
-    },
-    {
-      "id": "u2",
-      "name": "Jessica Lee",
-      "email": "jessica.lee@example.com",
-      "passwordHash": "$2b$10$PoaIbA8wG/1P8lQz4Uy.4OeWv5Ob5Y8yt5MyaBvHeqZxOK9ltXh1y"
-    }
-  ]
+  {
+    "id": "u1",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "passwordHash": "$2b$10$D9uE7hL5wF0IYik8Pg8C4usq4yz6iPpZrRLD1DLfTcb4c3E8lq4hy"
+  },
+  {
+    "id": "u2",
+    "name": "Jessica Lee",
+    "email": "jessica.lee@example.com",
+    "passwordHash": "$2b$10$PoaIbA8wG/1P8lQz4Uy.4OeWv5Ob5Y8yt5MyaBvHeqZxOK9ltXh1y"
+  }
+]
