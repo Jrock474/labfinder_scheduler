@@ -1,0 +1,17 @@
+[
+    {
+      "id": "a1",
+      "providerId": "p1",
+      "dateTime": "2025-10-14T09:00:00Z",
+      "userEmail": "john.doe@example.com",
+      "reservationCode": "RF8K9P"
+    },
+    {
+      "id": "a2",
+      "providerId": "p2",
+      "dateTime": "2025-10-13T08:00:00Z",
+      "userEmail": "jessica.lee@example.com",
+      "reservationCode": "B7X2Z1"
+    }
+  ]
+  

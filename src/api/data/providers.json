@@ -1,0 +1,24 @@
+[
+    {
+      "id": "p1",
+      "facilityName": "Peachtree Diagnostics Center",
+      "doctorName": "Dr. Alicia Kim",
+      "specialty": "Radiology",
+      "availableHours": [
+        "2025-10-13T13:00:00Z",
+        "2025-10-13T15:30:00Z",
+        "2025-10-14T09:00:00Z"
+      ]
+    },
+    {
+      "id": "p2",
+      "facilityName": "Midtown Health Labs",
+      "doctorName": "Dr. Samuel O'Connor",
+      "specialty": "Blood Testing",
+      "availableHours": [
+        "2025-10-13T08:00:00Z",
+        "2025-10-14T11:00:00Z"
+      ]
+    }
+  ]
+  
