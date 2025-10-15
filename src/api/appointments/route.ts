@@ -1,0 +1,16 @@
+import { NextResponse } from 'next/server'
+import bcrypt from 'bcrypt'
+import { userDB } from '../lib/db'
+import { Users } from '../lib/types'
+
+export const POST = async (req: Request) =>{
+    const { email, name, password } = await req.json()
+
+    userDB.read()
+
+    const existingUser = userDB.data.find(u => u.email === email)
+
+    if(existingUser) {
+        return NextResponse.json({ error: 'Email already in use' }, { status: 400 })
+    } 
+}
