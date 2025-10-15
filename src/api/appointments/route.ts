@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import { userDB } from '../lib/db'
 import { Users } from '../lib/types'
 
