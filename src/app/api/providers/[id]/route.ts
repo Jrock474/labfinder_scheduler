@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { appointmentDB } from "../../../../lib/db";
-import { Appointment } from "../../../../lib/types";
+import { providerDB } from "../../../../../lib/db";
+import { Provider } from "../../../../../lib/types";
 
 export const GET = async (req: Request, params: { id: string }) => {
   const id = params.id;
-  await appointmentDB.read();
+  await providerDB.read();
 
-  const provider = appointmentDB.data.find((p: Appointment) => p.id === id);
+  const provider = providerDB.data.find((p: Provider) => p.id === id);
 
   if (!provider) {
     return NextResponse.json({ error: "Provider not found" }, { status: 404 });
