@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { userDB } from "@/api/lib/db";
-import { Users } from "@/api/lib/types";
+import { userDB } from "../../../../lib/db";
+import { User } from "../../../../lib/types";
 
 export const POST = async (req: Request) => {
   const { email, name, password } = await req.json();
@@ -19,7 +19,7 @@ export const POST = async (req: Request) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const newUser: Users = {
+  const newUser: User = {
     id: crypto.randomUUID(),
     name,
     email,

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { providerDB } from "@/api/lib/db";
-import { Provider } from "@/api/lib/types";
+import { providerDB } from "../../../../lib/db";
+import { Provider } from "../../../../lib/types";
 
 export const GET = async (req: Request, params: { id: string }) => {
   const id = params.id;

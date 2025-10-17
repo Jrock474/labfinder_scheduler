@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { appointmentDB } from "@/api/lib/db";
-import { Appointment } from "@/api/lib/types";
+import { appointmentDB } from "../../../../lib/db";
+import { Appointment } from "../../../../lib/types";
 
 export const GET = async (req: Request, params: { id: string }) => {
   const id = params.id;

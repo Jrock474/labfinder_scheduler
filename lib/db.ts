@@ -1,6 +1,6 @@
 import { JSONFilePreset } from "lowdb/node";
 import path from "path";
-import { Provider, Appointment, Users } from "./types";
+import { Provider, Appointment, User } from "./types";
 
 // Build the path to your /data directory
 const dataPath = path.join(process.cwd(), "data");
@@ -20,7 +20,7 @@ export const appointmentDB = await JSONFilePreset<Appointment[]>(
 );
 
 // User Database
-export const userDB = await JSONFilePreset<Users[]>(
+export const userDB = await JSONFilePreset<User[]>(
   path.join(dataPath, "users.json"),
   [],
 );
