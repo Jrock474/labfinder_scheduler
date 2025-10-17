@@ -5,5 +5,5 @@ export const GET = async (req: Request) => {
   await userDB.read();
   const users = userDB.data;
 
-  NextResponse.json(users);
+  return NextResponse.json(users);
 };
