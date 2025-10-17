@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { userDB, appointmentDB, providerDB } from "../../../../../lib/db";
-import { User } from "../../../../../lib/types";
 import { Appointment } from "../../../../../lib/types";
 
 export const POST = async (req: Request) => {
@@ -14,6 +13,7 @@ export const POST = async (req: Request) => {
 
   const existingUser = userDB.data.find((u) => u.email === email);
   const provider = providerDB.data.find((p) => p.doctorName === doctorName);
+  const existingAppointment = appointmentDB.data.find((a) => a.patientEmail === email)
 
   if (!existingUser) {
     return NextResponse.json(
@@ -47,6 +47,13 @@ export const POST = async (req: Request) => {
     patientName: existingUser.name,
     patientEmail: existingUser.email,
   };
+
+  if(newAppointment.patientEmail === existingAppointment?.patientEmail && newAppointment.dateTime === existingAppointment.dateTime){
+    return  NextResponse.json(
+      { message: "Appointment already on reccord" },
+      { status: 400 },
+    );
+  }
 
   try {
     if (result) {
