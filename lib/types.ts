@@ -53,10 +53,3 @@ export interface Provider {
   specialty: string;
   availableHours: string[];
 }
-
-export interface Appointment {
-  id: string;
-  providerId: string;
-  dateTime: string;
-  userEmail?: string; // Optional for anonymous bookings reservationCode: string;
-}
