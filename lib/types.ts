@@ -25,10 +25,12 @@ export enum Specialty {
 }
 
 // Optional: Type for creating a new provider (without id)
-export type NewHealthcareProvider = Omit<HealthcareProvider, 'id'>;
+export type NewHealthcareProvider = Omit<HealthcareProvider, "id">;
 
 // Optional: Type for updating a provider (all fields optional except id)
-export type UpdateHealthcareProvider = Partial<HealthcareProvider> & { id: string };
+export type UpdateHealthcareProvider = Partial<HealthcareProvider> & {
+  id: string;
+};
 
 // Optional: Type for a booked appointment
 export interface Appointment {
