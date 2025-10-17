@@ -5,5 +5,5 @@ export const GET = async (req: Request) => {
   await providerDB.read();
   const providers = providerDB.data;
 
-  NextResponse.json(providers);
+  return NextResponse.json(providers);
 };

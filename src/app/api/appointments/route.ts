@@ -5,5 +5,5 @@ export const GET = async (req: Request) => {
   await appointmentDB.read();
   const appointments = appointmentDB.data;
 
-  NextResponse.json(appointments);
+  return NextResponse.json(appointments);
 };
