@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>LabFinder Scheduler API</h1>
 
-## Getting Started
+<p>
+LabFinder Scheduler is a healthcare appointment scheduling API built with Next.js and TypeScript. The project manages users, healthcare providers, and appointments while providing API routes for registration, authentication, provider discovery, and appointment scheduling.
+</p>
 
-First, run the development server:
+<p>
+The project focuses primarily on backend API development, data persistence, authentication, and handling relationships between users, providers, and appointments.
+</p>
+
+<h2>Purpose</h2>
+
+<p>
+The purpose of this project was to build the backend functionality of a healthcare scheduling system where users can create accounts, authenticate their credentials, view available healthcare providers, and schedule appointments.
+</p>
+
+<p>
+The project also gave me experience designing API routes with the Next.js App Router and working with persistent JSON-based data without relying on an external database service.
+</p>
+
+<h2>Technologies</h2>
+
+<ul>
+    <li>Next.js</li>
+    <li>TypeScript</li>
+    <li>Node.js</li>
+    <li>LowDB</li>
+    <li>Bcrypt.js</li>
+    <li>REST APIs</li>
+    <li>JSON</li>
+</ul>
+
+<h2>Functionality</h2>
+
+<ul>
+    <li>Register new users</li>
+    <li>Hash user passwords before storing them</li>
+    <li>Authenticate users using their email and password</li>
+    <li>Retrieve registered users</li>
+    <li>Retrieve healthcare providers</li>
+    <li>Store provider information including facility, doctor, specialty, and available hours</li>
+    <li>Retrieve scheduled appointments</li>
+    <li>Create appointments for authenticated users</li>
+    <li>Associate appointments with healthcare providers</li>
+    <li>Prevent duplicate appointments for the same patient and time</li>
+    <li>Persist users, providers, and appointments using LowDB and JSON files</li>
+</ul>
+
+<h3>API Routes</h3>
+
+| Method | Endpoint                | Description                    |
+| ------ | ----------------------- | ------------------------------ |
+| GET    | `/`                     | Returns the API status         |
+| GET    | `/api/users`            | Retrieves users                |
+| POST   | `/api/users/register`   | Registers a new user           |
+| POST   | `/api/users/login`      | Validates user credentials     |
+| GET    | `/api/providers`        | Retrieves healthcare providers |
+| GET    | `/api/appointments`     | Retrieves appointments         |
+| POST   | `/api/appointments/new` | Creates a new appointment      |
+
+<h2>Development</h2>
+
+<p>To run the project locally:</p>
+
+<h3>1. Fork the Repository</h3>
+
+<p>
+Fork this repository to your own GitHub account and download your fork to your local machine.
+</p>
+
+<h3>2. Navigate to the Project</h3>
+
+```bash
+cd labfinder_scheduler
+```
+
+<h3>3. Install Dependencies</h3>
+
+```bash
+npm install
+```
+
+<h3>4. Start the Development Server</h3>
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h3>5. Test the API</h3>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p>
+The development server will run locally at:
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+http://localhost:3000
+```
 
-## Learn More
+<p>
+API requests can be tested using tools such as Postman, Insomnia, or another REST client.
+</p>
 
-To learn more about Next.js, take a look at the following resources:
+<h3>Example User Registration</h3>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<p>Send the request to:</p>
 
-## Deploy on Vercel
+```text
+POST /api/users/register
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<h3>Example Login</h3>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```json
+{
+    "email": "john@example.com",
+    "password": "password"
+}
+```
+
+<p>Send the request to:</p>
+
+```text
+POST /api/users/login
+```
+
+<h3>Example Appointment Request</h3>
+
+```json
+{
+    "email": "john@example.com",
+    "password": "password",
+    "doctorName": "Provider Name"
+}
+```
+
+<p>Send the request to:</p>
+
+```text
+POST /api/appointments/new
+```
+
+<h2>What I Learned</h2>
+
+<ul>
+    <li>Building REST-style API endpoints using Next.js Route Handlers</li>
+    <li>Structuring backend resources around users, providers, and appointments</li>
+    <li>Persisting application data with LowDB and JSON files</li>
+    <li>Hashing and comparing passwords using Bcrypt</li>
+    <li>Validating user credentials before allowing protected operations</li>
+    <li>Connecting related data across multiple resources</li>
+    <li>Handling duplicate records and invalid API requests</li>
+    <li>Using TypeScript interfaces to define consistent application data models</li>
+</ul>
+
+<h2>Links</h2>
+
+<ul>
+    <li>
+        <a href="https://github.com/Jrock474/labfinder_scheduler">GitHub Repository</a>
+    </li>
+</ul>
+
